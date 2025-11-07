@@ -1,11 +1,15 @@
 ﻿
 
 @{
+    Layout = null;
     ViewBag.Title = "JobPortal";
-    Layout = "~/Views/Shared/_HeaderLayout.cshtml";
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="@Url.Content("~/Assets/Styles/JoPortalStyle.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Assets/Styles/ImageSlider.css")" rel="stylesheet" type="text/css" />
 }
 
-<!-- Navbar -->
+<!-- Navbar Start-->
 <div class="navbar-container">
     <div class="navbar">
         <div class="logo">JobPortal</div>
@@ -15,7 +19,6 @@
         </div>
     </div>
 
-    <!-- Heroes Section -->
     <div class="heroes">
         <h1>Your Gateway To <span>New Career Opportunities</span></h1>
         <h1>And The Perfect Hire</h1>
@@ -26,23 +29,24 @@
             <button>Search</button>
         </div>
     </div>
-
-
-    <div id="wrapper">
-        <div id="top-oval"></div>
-        <div id="strip-w">
-            <div class="strip-track">
-                <div class="strip-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYMh7uin4jtg75EIOV4lr5xZ_pyTajuwA1yQ&s" />
-                </div>
-                <div class="strip-item"><img src="https://picsum.photos/id/1015/300/300" /></div>
-                <div class="strip-item"><img src="https://picsum.photos/id/1021/300/300" /></div>
-                <div class="strip-item"><img src="https://picsum.photos/id/1022/300/300" /></div>
-                <div class="strip-item"><img src="https://picsum.photos/id/1035/300/300" /></div>
-                <div class="strip-item"><img src="https://picsum.photos/id/1041/300/300" /></div>
-                <div class="strip-item"><img src="https://picsum.photos/id/1051/300/300" /></div>
-     <!--duplicate for infinite loop--> 
-    <div class="strip-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYMh7uin4jtg75EIOV4lr5xZ_pyTajuwA1yQ&s" /></div>
+</div>
+<!-- Navbar End-->
+<!-- Image slider Start -->
+<div id="wrapper">
+    <div id="top-oval"></div>
+    <div id="strip-w">
+        <div class="strip-track">
+            <div class="strip-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYMh7uin4jtg75EIOV4lr5xZ_pyTajuwA1yQ&s" />
+            </div>
+            <div class="strip-item"><img src="https://picsum.photos/id/1015/300/300" /></div>
+            <div class="strip-item"><img src="https://picsum.photos/id/1021/300/300" /></div>
+            <div class="strip-item"><img src="https://picsum.photos/id/1022/300/300" /></div>
+            <div class="strip-item"><img src="https://picsum.photos/id/1035/300/300" /></div>
+            <div class="strip-item"><img src="https://picsum.photos/id/1041/300/300" /></div>
+            <div class="strip-item"><img src="https://picsum.photos/id/1051/300/300" /></div>
+            <!--duplicate for infinite loop-->
+            <div class="strip-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYMh7uin4jtg75EIOV4lr5xZ_pyTajuwA1yQ&s" /></div>
             <div class="strip-item"><img src="https://picsum.photos/id/1015/300/300" /></div>
             <div class="strip-item"><img src="https://picsum.photos/id/1021/300/300" /></div>
             <div class="strip-item"><img src="https://picsum.photos/id/1022/300/300" /></div>
@@ -53,12 +57,8 @@
     </div>
     <div id="bottom-oval"></div>
 </div>
-</div>
-
-
-
-
-<!--Header Start-->
+<!-- Image slider End -->
+<!--Content Wrapper Start or Main Content-->
 <div class="content-wrapper">
     <header class="header">
         <h1 class="main-title">
@@ -115,12 +115,9 @@
             </div>
         </div>
     </div>
-    <!--Header End-->
-    <!--Job Container Start-->
 
     <div class="job-container">
         <div class="job-grid">
-            <!-- Left Side -->
             <div class="job-list">
                 <div class="job-card">
                     <div class="job-title">Frontend Developer</div>
@@ -140,14 +137,12 @@
                 </div>
             </div>
 
-            <!-- Center -->
             <div class="center-box">
                 <h2>Trending <span>Jobs</span> with<br> high demand</h2>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTJCJPgCNvd9YhzhbzOr17Hr9kZPAwauUX2A&s" alt="Job Character" />
                 <button class="apply-btn">Apply For A Job</button>
             </div>
 
-            <!-- Right Side -->
             <div class="job-list">
                 <div class="job-card">
                     <div class="job-title">Graphic Designer</div>
@@ -169,9 +164,6 @@
         </div>
     </div>
 
-
-    <!--Job Container End-->
-    <!--Hero Container Start-->
     <section class="hero container">
         <div class="hero-left">
             <h1 class="headline">Be A <span class="accent">Freelancer</span>, Be Independent</h1>
@@ -181,8 +173,7 @@
             <button class="btn-outline">Explore Freelancing</button>
         </div>
     </section>
-    <!--Hero Container End-->
-    <!-- Feature cards Start-->
+
     <section class="features container">
         <div class="feature-card">
             <div class="feature-illustration">
@@ -205,19 +196,16 @@
             <p class="feature-text">Choose your projects, set<br> your own schedule</p>
         </div>
     </section>
-    <!-- Feature cards End-->
-    <!-- Profiles / growth illustration Start-->
+
     <section class="boss-container">
         <h2 class="headline center">Be Your <span class="accent">Own Boss</span>, Start Your Business</h2>
         <p class="sub center narrow">Turn your idea into a successful venture with access to mentorship, government schemes, business tools,<br> and startup resources, all in one place</p>
     </section>
 
 
-    @* My New Section *@
     <section class="revenue-section" style="width:100vw">
         <div class="container-fluid revenue-container">
 
-            <!-- Left Card -->
             <div class="revenue-card left fade-bottom">
                 <div class="revenue-badge-left d-flex align-items-center flex-column"><h1>₹10K</h1> <span>Revenue</span></div>
                 <div class="d-flex justify-content-lg-start flex-column text-lg-start">
@@ -229,13 +217,10 @@
                 </div>
                 <button class="btn-connect">Connect Now</button>
                 <button class="btn-invite">Invite user</button>
-
             </div>
 
-            <!-- Arrow -->
             <div class="arrow">➜</div>
 
-            <!-- Right Card -->
             <div class="revenue-card right fade-bottom">
                 <div class="revenue-badge-right  d-flex align-items-center flex-column"><h1>₹50K</h1> <span>Revenue</span></div>
 
@@ -250,15 +235,10 @@
                 <button class="btn-invite">Invite user</button>
                 <img src="https://cdn-icons-png.flaticon.com/512/2331/2331947.png" class="money-icon" alt="Money">
             </div>
-
         </div>
     </section>
 
-    @* End New Section *@
 
-
-    <!-- Profiles / growth illustration End-->
-    <!-- bottom info cards Start-->
     <section class="bottom-cards container">
         <div class="info-card">
             <img src="https://media.istockphoto.com/id/1432156040/vector/vector-flat-illustration-of-web-ui-ux-design-web-development-concept-team-designers-creating.jpg?s=612x612&w=0&k=20&c=XEMYf3ZGy5QncMGeuMMcgKcOUIE1bxl2xWPrw6owLpc=" alt="">
@@ -282,13 +262,8 @@
     <section class="cta container">
         <button class="btn-outline big">Get Guide For Business</button>
     </section>
-    <!-- bottom info cards End-->
-
 </div>
-
-
-
-
+<!--Content Wrapper End or main Content-->
 <!-- SECTION 1 -->
 <section class="features-section">
     <h2>We provide many <span>features</span> that you can use</h2>
@@ -297,8 +272,7 @@
         <img src="https://www.technaureus.com/media/product-image/Wash__Fold_Pro_Dashboard_UI.png" alt="portal dashboard image">
     </div>
 </section>
-
-
+<!--END-->
 <!-- SECTION 2 -->
 <div class="join-section-div container">
     <section class="join-section">
@@ -307,19 +281,19 @@
         <button>Login/Signup</button>
 
     </section>
-    <div class="People-Illustration-image p-0 m-0">
+    <div class="People-Illustration-image">
         <img src="https://img.freepik.com/premium-photo/3d-illustration-teacher-with-her-students-classroom_1057-40002.jpg" alt="People Illustration">
     </div>
 </div>
-
+<!--END-->
 <!-- SECTION 3 -->
 <section class="insights-section">
     <h3>UPSKILL FOR A BETTER FUTURE</h3>
     <h2>Stay ahead with job market insights</h2>
     <p>50K+ jobs posted, 20K+ candidates placed, 5K+ companies hiring</p>
     <button>Explore Jobs</button>
-
     <hr />
+    <!--END-->
     <!-- FOOTER -->
     <footer>
         <div class="logo-content">
@@ -336,9 +310,6 @@
             <div class="in"><a href="#">g</a></div>
         </div>
     </footer>
+    <!--END-->
 </section>
-
-
-
-
-
+<!--END-->

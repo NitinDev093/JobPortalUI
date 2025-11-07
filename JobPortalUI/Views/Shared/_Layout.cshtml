@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="@Url.Content("~/Assets/JoPortalStyle.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Assets/ImageSlider.css")" rel="stylesheet" type="text/css" />
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -22,7 +25,7 @@
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <div class="container-fluid body-content" style="margin:0;padding:0;">
         @RenderBody()
         <hr />
         <footer>
