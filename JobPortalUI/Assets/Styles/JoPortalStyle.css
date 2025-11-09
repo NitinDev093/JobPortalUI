@@ -7,14 +7,14 @@ background: #eaf5ff;
 
 .navbar {
     width: 85%;
-    height: 80px;
+    height: 70px;
     display: flex;
     margin: auto;
     background: white;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    padding: 0px 50px;
+    padding: 0px 20px;
     border-radius: 25px;
     border: 1px solid #0077cc;
 }
@@ -74,7 +74,7 @@ background: #eaf5ff;
 
     .heroes h1 {
         padding-top:10px;
-        font-size: 3.8rem;
+        font-size: 3rem;
         font-weight: 700;
         color: #222;
     }
@@ -1036,14 +1036,14 @@ align-items:center;
     }
 
     .insights-section h2 {
-        font-size: 50px;
-        font-weight: 700;
+        font-size: 35px;
+        font-weight: 500;
         margin-bottom: 15px;
     }
 
     .insights-section p {
         color: #cdd3e2;
-        font-size: 20px;
+        font-size: 15px;
         margin-bottom: 40px;
     }
 
@@ -1067,13 +1067,21 @@ align-items:center;
 
     
 /* FOOTER CSS START */
-    footer {
-        color: #cdd3e2;
-        text-align: center;
-        padding: 20px 20px;
-        display:flex;
-        justify-content:space-between;
-    }
+hr{
+    width:78%;
+    margin:auto;
+}
+footer {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #cdd3e2;
+    text-align: center;
+    padding: 20px 20px;
+    display: flex;
+}
 
         footer .footer-links a {
             color: #cdd3e2;
@@ -1116,17 +1124,25 @@ align-items:center;
                 color: #fff;
             }
 
-    footer .logo {
-        font-size: 30px;
-        font-weight: 700;
-        color: #fff;
-    }
-footer .logo-content{
-    width:55%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
+        footer .logo {
+            display: flex;
+            width: 70px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid #fff;
+            font-size: 30px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        footer .logo p{
+            position:relative;
+            font-size: 35px;
+            font-weight: 500;
+            color: #fff;
+            top:13px;
+        }
 
 @media (max-width: 768px) {
     .features-section h2, .join-section h2, .insights-section h2 {
@@ -1156,7 +1172,6 @@ footer .logo-content{
     }
 }
 /* FOOTER CSS END */
-
 
 
 

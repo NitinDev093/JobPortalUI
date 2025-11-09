@@ -12,12 +12,5 @@ namespace JobPortalUI.Controllers
         {
             return View();
         }
-
-        public ActionResult Slider()
-        {
-            return View();
-        }
-
-
     }
 }
