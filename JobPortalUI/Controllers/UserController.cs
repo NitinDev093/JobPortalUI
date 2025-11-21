@@ -8,10 +8,15 @@ namespace JobPortalUI.Controllers
 {
     public class UserController : Controller
     {
-        // GET: User
         public ActionResult Login()
         {
             return View();
         }
+        public ActionResult OtpVerification()
+        {
+            return PartialView("_OtpVerification");
+        }
+
+
     }
 }

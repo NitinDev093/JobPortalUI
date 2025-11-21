@@ -1,0 +1,70 @@
+﻿
+.container {
+    color: white;
+    display:flex;
+    flex-direction:column;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    margin-top: 0;
+    opacity: 0.8;
+}
+
+.otp-label {
+    display: block;
+    margin: 30px 0 10px;
+    text-align: left;
+    color: white;
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+.otp-boxes {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+    .otp-boxes input {
+        width: 55px;
+        height: 55px;
+        border-radius: 10px;
+        border: none;
+        text-align: center;
+        font-size: 22px;
+        outline: none;
+    }
+
+.resend {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.9;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-right: 20px;
+    color: white;
+}
+
+    .resend a {
+        text-decoration: underline;
+        cursor: pointer;
+        color:white;
+    }
+
+.submit-btn {
+    margin-top: 20px;
+    padding:10px 70px;
+    border-radius: 10px;
+    border: none;
+    background: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    color:blue;
+}

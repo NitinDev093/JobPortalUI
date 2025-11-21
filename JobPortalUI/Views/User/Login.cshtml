@@ -1,9 +1,83 @@
 ﻿
 @{
-
+    Layout = null;
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
     ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link href="@Url.Content("~/Assets/Styles/Login.css")" rel="stylesheet" type="text/css" />
 }
 
-<h2>Login</h2>
+<div class="container-fluid">
+
+    <!-- LEFT SECTION -->
+    <div class="left">
+        <div class="left-content">
+            <div class="header-box"></div>
+            <h2 class="title">
+                Join thousands of users building <br />
+                their future with our platform
+            </h2>
+        </div>
+        @*<div class="semi-circle">
+            <img src="characters.png" class="characters" />
+            <div class="stats">
+                <div class="stat-card1">
+                    <span class="big">10,000+</span><br />
+                    Students Hired
+                </div>
+                <div class="stat-card">
+                    <span class="big">100K+</span><br />
+                    Active Users
+                </div>
+            </div>
+        </div>*@
+    </div>
+
+    <!-- RIGHT SECTION -->
+    <div class="right">
+        <div class="right-content" id="rightLoginForm">
+            <h1 class="hello">Hello there!</h1>
+            <p class="sub">Login to access your personal account</p>
+
+            <label class="label">Phone Number</label>
+
+            <div class="phone-box">
+                <div class="image-box">
+                    <img src="" />
+                </div>
+
+                <input type="number" placeholder="+91 98765 43210" />
+            </div>
+
+            <button class="otp-btn">Get OTP</button>
+        </div>
+
+        <div id="otpContainer" style="display:none;">
+            @Html.Action("OtpVerification", "User")
+        </div>
+
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function () {
+
+      $(".otp-btn").click(function () {
+        $("#rightLoginForm").hide();
+          $("#otpContainer").show();
+      });
+
+   });
+
+</script>
+
+
+
+
+
+
 

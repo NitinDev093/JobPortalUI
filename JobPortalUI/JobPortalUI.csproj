@@ -130,6 +130,8 @@
   <ItemGroup>
     <Content Include="Assets\Styles\ImageSlider.css" />
     <Content Include="Assets\Styles\JoPortalStyle.css" />
+    <Content Include="Assets\Styles\Login.css" />
+    <Content Include="Assets\Styles\OtpVerification.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -178,6 +180,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\_OtpVerification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,26 +12,34 @@
 }
 
 /* --- Top curve --- */
+
 #top-oval {
     position: absolute;
     top: 0;
     height: 90px;
     width: 100%;
+    /*background: yellow;*/
     background: #eaf5ff;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     border-bottom-left-radius: 70%;
     border-bottom-right-radius: 70%;
     z-index: 2;
 }
-/*.dotted-bottom {
-    position:relative;
-    bottom:50px;
-    border-bottom: 3px dotted black; 
-    width: 300px;
-}*/
 
 
+
+.dotted-top {
+    position: relative;
+    bottom: 25px;
+    left: 150px;
+    border-bottom: 3px dotted #9bb9ff;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+    width: 400px;
+    transform: rotate(2deg);
+    border-radius:5%;
+}
 .top-oval-content {
     position: relative;
     display: flex;
@@ -67,12 +75,23 @@
     bottom: 0;
     height: 90px;
     width: 100%;
+    /*background:yellow;*/
     background: #eaf5ff;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     border-top-left-radius: 70%;
     border-top-right-radius: 70%;
     z-index: 2;
+}
+.dotted-bottom {
+    position: relative;
+    bottom: 60px;
+    right: 150px;
+    border-bottom: 3px dotted #9bb9ff;
+    border-bottom-left-radius: 1%;
+    border-bottom-right-radius: 1%;
+    width: 400px;
+    transform: rotate(2deg);
 }
 .bottom-oval-content {
     position: relative;

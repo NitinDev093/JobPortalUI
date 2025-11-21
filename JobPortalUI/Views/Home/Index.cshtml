@@ -8,13 +8,13 @@
     <link href="@Url.Content("~/Assets/Styles/JoPortalStyle.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Assets/Styles/ImageSlider.css")" rel="stylesheet" type="text/css" />
 }
-
+<!--This is my landing page-->
 <!-- Navbar Start-->
 <div class="navbar-container">
     <div class="navbar">
         <div class="logo">JobPortal</div>
         <div class="buttons">
-            <button class="login">Login</button>
+            <button class="login" onclick="location.href='@Url.Action("Login", "User")'">Login</button>
             <button class="signup">Signup</button>
         </div>
     </div>
@@ -36,9 +36,7 @@
 
 <div id="wrapper">
     <div id="top-oval">
-        @*<div class="dotted-bottom">
-                This is a dotted div.
-            </div>*@
+        <div class="dotted-top"></div>
         <div class="top-oval-content">
             <h2>100+</h2>
             <p>Active Jobs</p>
@@ -70,6 +68,7 @@
             <h2>10,000+</h2>
             <p>Students Hired</p>
         </div>
+        <div class="dotted-bottom"></div>
     </div>
 </div>
 <!-- Image slider End -->
