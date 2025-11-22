@@ -5,6 +5,8 @@
     @Scripts.Render("~/bundles/modernizr")
     ViewBag.Title = "Login";
     <link href="@Url.Content("~/Assets/Styles/Login.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Assets/Styles/OtpVerification.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Assets/Styles/EmployeeAndCandidate.css")" rel="stylesheet" type="text/css" />
 }
 
 <div class="container-fluid">
@@ -19,18 +21,18 @@
             </h2>
         </div>
         @*<div class="semi-circle">
-            <img src="characters.png" class="characters" />
-            <div class="stats">
-                <div class="stat-card1">
-                    <span class="big">10,000+</span><br />
-                    Students Hired
+                <img src="characters.png" class="characters" />
+                <div class="stats">
+                    <div class="stat-card1">
+                        <span class="big">10,000+</span><br />
+                        Students Hired
+                    </div>
+                    <div class="stat-card">
+                        <span class="big">100K+</span><br />
+                        Active Users
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <span class="big">100K+</span><br />
-                    Active Users
-                </div>
-            </div>
-        </div>*@
+            </div>*@
     </div>
 
     <!-- RIGHT SECTION -->
@@ -49,13 +51,34 @@
                 <input type="number" placeholder="+91 98765 43210" />
             </div>
 
-            <button class="otp-btn">Get OTP</button>
+            <button class="otp-btn" onclick="sendOtp()">Get OTP</button>
         </div>
-
+        <!--Otp Section start-->
         <div id="otpContainer" style="display:none;">
-            @Html.Action("OtpVerification", "User")
+            <div class="container">
+                <h1>Hello there!</h1>
+                <p class="subtitle">Login to access your personal account</p>
+                <label class="otp-label">OTP</label>
+                <div class="otp-boxes">
+                    <input maxlength="1" required />
+                    <input maxlength="1" required />
+                    <input maxlength="1" required />
+                    <input maxlength="1" required />
+                    <input maxlength="1" required />
+                    <input maxlength="1" required />
+                </div>
+                <p class="resend">Didn't receive the OTP yet? <a href="#">Resend</a></p>
+                <button class="submit-btn" onclick="verifyOtp()">Submit OTP</button>
+            </div>
         </div>
+        <!--Otp Section end-->
 
+        <!--employee/candidate Section start-->
+        <div class="employeeCandidate" id="candidateAndEmployee" style="display:none;">
+            <div class="employee" id="Employee" style="cursor:pointer;">Employee</div>
+            <div class="candidate" id="Candidate" style="cursor:pointer;">Candidate</div>
+        </div>
+        <!--employee / candidate Section end-->
     </div>
 </div>
 
@@ -64,14 +87,73 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript">
 
-   $(document).ready(function () {
+    $(document).ready(function () {
 
-      $(".otp-btn").click(function () {
-        $("#rightLoginForm").hide();
-          $("#otpContainer").show();
-      });
+        //Autofocus input
+        $('#otpContainer .otp-boxes input').on('keyup', function (e) {
+            let $this = $(this);
+            if ($this.val().length === 1) {
+                $this.next('input').focus();
+            }
+            if (e.key === "Backspace" || e.keyCode === 8) {
+                $this.prev('input').focus();
+            }
+        });
 
-   });
+        //Redirect to Employee page
+        $("#Employee").click(function () {
+            window.location.href = '/Employee/Employee';
+        });
+
+        //Redirect to Candidate page
+        $("#Candidate").click(function () {
+            window.location.href = '/Candidate/Candidate';
+        });
+
+    });
+
+
+    function sendOtp() {
+        var mobile = $('#mobileNo').val();
+        $.ajax({
+            url: '/User/SendOtp',
+            type: 'GET',
+            data: { mobile: mobile },
+            success: function (response) {
+                if (response.success) {
+                    alert("OTP Sent Successfully!");
+                    $("#rightLoginForm").hide();
+                    $('#otpContainer').show();
+                }
+            }
+        });
+    }
+
+    function verifyOtp() {
+        var otp = '';
+        $('#otpContainer .otp-boxes input').each(function () {
+            otp += $(this).val();
+        });
+        if (otp.length !== 6) {
+            alert("Please enter all digits!");
+            return;
+        }
+        $.ajax({
+            url: '/User/VerifyOtp',
+            type: 'GET',
+            data: { otp: otp },
+            success: function (response) {
+                if (response.valid) {
+                    alert("OTP Verified Successfully!");
+                    $("#otpContainer").hide();
+                    $("#candidateAndEmployee").show();
+                } else {
+                    alert("Invalid OTP. Please enter valid otp.");
+                    $("#otpContainer").show();
+                }
+            }
+        });
+    }
 
 </script>
 
